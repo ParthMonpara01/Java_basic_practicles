@@ -17,7 +17,7 @@ class EMICalculator {
 		// Total number of monthly installments
 		int months = time * 12;
 
-		// EMI Formula
+		// EMI Formula..
 		double emi = (principal * monthlyRate *
 				Math.pow(1 + monthlyRate, months))
 				/ (Math.pow(1 + monthlyRate, months) - 1);
