@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Practicle3 {
 	public static void main(String[] args) {
 
+		//Wrting a programm to find current month name from the given number
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("Enter month number (1-12): ");
@@ -52,7 +53,7 @@ public class Practicle3 {
 
 			case 11:
 				System.out.println("November");
-				break;
+
 
 			case 12:
 				System.out.println("December");
