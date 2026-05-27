@@ -22,7 +22,7 @@ class EMICalculator {
 				Math.pow(1 + monthlyRate, months))
 				/ (Math.pow(1 + monthlyRate, months) - 1);
 
-		// Output.
+		// Output..cdcdwe
 		System.out.println("Loan Amount : " + principal);
 		System.out.println("Interest Rate : " + annualRate + "%");
 		System.out.println("Loan Period : " + time + " years");
