@@ -11,6 +11,6 @@ public class Practicle7 {
 	public Practicle7(int a,int b){
 		int c = a + b;
 		System.out.println("Parameterized Constuctor : " + c);
-		System.out.println("Changed parameterize Con. Code");
+		System.out.println("Changed parameterize ");
 	}
 }
