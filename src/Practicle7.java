@@ -1,4 +1,5 @@
 public class Practicle7 {
+
 	public static void main(String[] args){
 		Practicle7 p7 = new Practicle7();
 	}
@@ -13,4 +14,5 @@ public class Practicle7 {
 		System.out.println("Parameterized Constuctor : " + c);
 		System.out.println("Changed parameterize ");
 	}
+
 }

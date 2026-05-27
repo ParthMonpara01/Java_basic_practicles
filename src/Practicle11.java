@@ -40,4 +40,5 @@ class Child extends Parent {
 
 		Child.showCount();
 	}
+
 }

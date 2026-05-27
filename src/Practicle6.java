@@ -12,4 +12,5 @@ public class Practicle6 {
 			System.out.print(i + " ");
 		}
 	}
+
 }

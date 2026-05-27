@@ -55,4 +55,5 @@ public class Practicle8 {
 
 		sc.close();
 	}
+
 }
