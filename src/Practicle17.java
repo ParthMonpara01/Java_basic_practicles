@@ -1,10 +1,36 @@
-public interface Practicle17 {
-	public void method1();
+// Interface
+interface Animal1 {
+
+	void sound(); // abstract method
 }
 
-class Second{
+// Implementing Interface
+class Dog1 implements Animal1 {
 
-	public void method1(){
-		System.out.println("Providing Body Of Interface Method");
+	@Override
+	public void sound() {
+		System.out.println("Dog barks");
 	}
+}
+
+class Cat implements Animal1 {
+
+	@Override
+	public void sound() {
+		System.out.println("Cat meows");
+	}
+}
+
+// Main Class
+public class Practicle17 {
+
+	public static void main(String[] args) {
+
+		Dog d = new Dog();
+		d.sound();
+
+		Cat c = new Cat();
+		c.sound();
+	}
+
 }
