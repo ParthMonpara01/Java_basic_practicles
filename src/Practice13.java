@@ -1,4 +1,5 @@
 abstract class Animal {
+
 	//abstract Method
 	abstract void sound();
 
@@ -18,5 +19,7 @@ public class Practice13{
 	public static void main(String[] args){
 		Dog d = new Dog();
 		d.sound();
+		d.eat();
 	}
+
 }

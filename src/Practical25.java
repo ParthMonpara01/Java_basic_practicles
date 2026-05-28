@@ -1,39 +1,47 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Practical25 {
+
 	public static void main(String[] args) {
 
-		BufferedReader reader = null;
-
 		try {
-			// Open the file for reading
-			reader = new BufferedReader(new FileReader("myTestFile.txt"));
 
-			String line;
+			// File Handling
+			File file = new File("myTestFile.txt");
 
-			System.out.println("Reading file content:\n");
+			// Input Handling
+			Scanner sc = new Scanner(file);
 
-			// Reading file line by line using loop
-			while ((line = reader.readLine()) != null) {
+			System.out.println("Reading File Data:\n");
 
-				// String handling example: converting to uppercase
-				System.out.println(line.toUpperCase());
+			// Loop for reading file line by line
+			while (sc.hasNextLine()) {
+
+				// String Handling
+				String data = sc.nextLine();
+
+				System.out.println(data);
+
+				// Example string operations
+				System.out.println("Uppercase: "
+						+ data.toUpperCase());
+
+				System.out.println("Length: "
+						+ data.length());
+
+				System.out.println();
 			}
 
-		} catch (IOException e) {
-			System.out.println("Error while reading the file.");
-			e.printStackTrace();
+			sc.close();
 
-		} finally {
-			try {
-				if (reader != null) {
-					reader.close();
-				}
-			} catch (IOException e) {
-				System.out.println("Error closing the file.");
-			}
+		} catch (FileNotFoundException e) {
+
+			// Exception Handling
+			System.out.println("File not found: "
+					+ e.getMessage());
 		}
 	}
+
 }

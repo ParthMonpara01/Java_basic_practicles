@@ -1,9 +1,9 @@
 public class Practicle16 {
 	public static void main(String[] args){
-		PolymorphismInJava pij = new PolymorphismInJava();
-		PolyporphismInJava2 pij2 = new PolyporphismInJava2();
-		pij2.Method1();
-		pij.Method1("Parth Monpara");
+		Practicle16 p16 = new Practicle16();
+		p16.Method1();
+		p16.Method1(10);
+		p16.Method1("Parth Monpara");
 	}
 
 	public void Method1(){
@@ -20,7 +20,7 @@ public class Practicle16 {
 
 }
 
-class Practicles16 extends Practicle16{
+class ChildClass extends Practicle16{
 	public void Method1(){
 		System.out.println("PolymorphismInJava2 Method Called..");
 	}
@@ -29,4 +29,5 @@ class Practicles16 extends Practicle16{
 		System.out.println("PolymorphismInJava2 Method-1 called...");
 		System.out.println("My Name is " + name);
 	}
+
 }

@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Practicle20 {
+public class
+Practicle20 {
 	public static void main(String[] args) {
 
 		List<String> list = new ArrayList<>();
@@ -19,4 +20,5 @@ public class Practicle20 {
 			System.out.println(itr.next());
 		}
 	}
+
 }

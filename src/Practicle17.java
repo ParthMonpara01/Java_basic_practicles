@@ -1,10 +1,21 @@
-public interface Practicle17 {
-	public void method1();
+interface SampleIntergace {
+
+	void method1();
 }
 
-class Second{
+class Second implements SampleIntergace {
 
-	public void method1(){
+	@Override
+	public void method1() {
 		System.out.println("Providing Body Of Interface Method");
 	}
+}
+
+public class Practicle17 {
+	public static void main(String[] args) {
+
+		Second s = new Second();
+		s.method1();
+	}
+
 }

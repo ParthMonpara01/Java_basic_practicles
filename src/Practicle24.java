@@ -11,8 +11,9 @@ public class Practicle24 {
 			// Writing personal details
 			writer.write("Name: John Doe\n");
 			writer.write("Age: 20\n");
-			writer.write("Course: BCA\n");
+			writer.write("Course: MCA\n");
 			writer.write("City: Ahmedabad\n");
+			writer.write("Skills: Java,React\n");
 
 			// Closing the file
 			writer.close();
@@ -24,4 +25,5 @@ public class Practicle24 {
 			e.printStackTrace();
 		}
 	}
+
 }

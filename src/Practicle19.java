@@ -1,4 +1,5 @@
 public class Practicle19 {
+
 	public static void main(String[] args){
 		int arr[] = {10,20,30,40};
 		int ele = 30;
@@ -16,4 +17,5 @@ public class Practicle19 {
 		}
 		return index;
 	}
+
 }

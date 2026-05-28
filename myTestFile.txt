@@ -1,4 +1,5 @@
 Name: John Doe
 Age: 20
-Course: BCA
+Course: MCA
 City: Ahmedabad
+Skills: Java,React

@@ -1,4 +1,5 @@
 class Students{
+
 	int id;
 	String Name;
 
@@ -21,12 +22,14 @@ class Students{
 	}
 }
 
-public class EncapsulationDemo {
+public class Practical14 {
 	public static void main(String[] args){
 		Students s = new Students();
 		s.setId(101);
 		s.setName("Parth Monpara");
-
+		System.out.println(s.getId());
+		System.out.println(s.getName());
 
 	}
+
 }

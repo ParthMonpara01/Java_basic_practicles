@@ -29,4 +29,5 @@ class PolyporphismInJava2 extends PolymorphismInJava{
 		System.out.println("PolymorphismInJava2 Method-1 called...");
 		System.out.println("My Name is " + name);
 	}
+
 }

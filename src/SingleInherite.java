@@ -12,5 +12,3 @@ public class SingleInherite {
 class DataInherite2 extends SingleInherite{
 
 }
-
-

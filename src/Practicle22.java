@@ -28,4 +28,14 @@ public class Practicle22 {
 		System.out.println("List after removing duplicates:");
 		System.out.println(set);
 	}
+
+	//Java will iterate internally after writing code like "System.out.println(list);"
+	//System.out.println(list.toString());
+	//after that java will create String like [A, B, C, D] and we'll get output by wrinting System.out.println(list);
+
+	//We used LinkedHashSet to remove the duplicates
+	//Set will no store duplicates
+	//Normal HashSet may change the order of the value
+	//But LinkedHashSet will Maintain the order of the value
+
 }
