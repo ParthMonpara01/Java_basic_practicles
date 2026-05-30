@@ -15,7 +15,7 @@ public class Practicle23 {
 
 			fw.close();
 
-			System.out.println("Data written successfully");
+			System.out.println("Data written successfully...	");
 
 			// Reading data from file
 			FileReader fr = new FileReader("demo.txt");
