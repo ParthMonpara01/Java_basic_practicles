@@ -65,4 +65,5 @@ public class Practicle3 {
 
 		sc.close();
 	}
+	
 }
