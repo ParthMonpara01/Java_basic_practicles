@@ -1,4 +1,6 @@
-//Writing Program of Parameterized and Non-Parameterized constructor
+/**
+ * Writing a program of Parameterized and Non-Parameterized Constructor
+ */
 public class Practical7 {
 
 	public static void main(String[] args){

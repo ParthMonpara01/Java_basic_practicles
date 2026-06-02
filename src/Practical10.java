@@ -1,4 +1,6 @@
-//Writing Program of different Inbuilt functions in Java
+/**
+ * Writing a program of different inbuilt functions in Java
+ */
 public class Practical10 {
 
 	public static void main(String[] args) {

@@ -1,4 +1,6 @@
-//Writing Program for Static keyword
+/**
+ * Writing a program of Static keyword
+ */
 class StaticDemo {
 
 	// Static Variable

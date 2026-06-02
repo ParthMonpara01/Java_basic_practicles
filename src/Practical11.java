@@ -1,4 +1,6 @@
-//Writing Program of use This and Super Keyword
+/**
+ * Writing a program of This and Super Keyword in Java
+ */
 class Parent {
 	static int x = 10;
 

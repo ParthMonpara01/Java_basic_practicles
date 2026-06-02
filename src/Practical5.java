@@ -1,4 +1,6 @@
-// Writing program of Star Pattern
+/**
+ * Writing a program of star pattern
+ */
 public class Practical5 {
 
 	public static void main(String[] args){

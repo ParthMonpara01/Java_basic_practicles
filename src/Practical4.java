@@ -1,4 +1,6 @@
-// Writing Program of While loop and do while loop
+/**
+ * Writing a program for while loop and do-while loop
+ */
 public class Practical4 {
 
 	public static void main(String[] args){

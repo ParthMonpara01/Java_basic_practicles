@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
-// Writing a program to find current month name from the given number
+/**
+ * Writing a programm to find current month name from given number by user
+ */
 public class Practical3 {
 	
 	public static void main(String[] args) {

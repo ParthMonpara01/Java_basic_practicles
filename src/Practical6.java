@@ -1,4 +1,6 @@
-// Writing program of Break, Continue Keyword
+/**
+ * Writing a program of Break, Continue Keyword
+ */
 public class Practical6 {
 
 	public static void main(String[] args){
