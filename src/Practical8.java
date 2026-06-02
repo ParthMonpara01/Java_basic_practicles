@@ -41,15 +41,48 @@ public class Practical8 {
 		// Object Creation
 		EMICalculator obj = new EMICalculator();
 
-		// Input from user
-		System.out.print("Enter Loan Amount: ");
-		obj.principal = sc.nextDouble();
 
-		System.out.print("Enter Annual Interest Rate: ");
-		obj.annualRate = sc.nextDouble();
+		// Loan Amount Validation
+		while (true) {
 
-		System.out.print("Enter Loan Time (Years): ");
-		obj.time = sc.nextInt();
+			System.out.print("Enter Loan Amount: ");
+			obj.principal = sc.nextDouble();
+
+			if (obj.principal > 0) {
+				break;
+			} else {
+				System.out.println("Loan Amount must be greater than 0");
+			}
+		}
+
+
+		// Interest Rate Validation
+		while (true) {
+
+			System.out.print("Enter Annual Interest Rate: ");
+			obj.annualRate = sc.nextDouble();
+
+			if (obj.annualRate > 0) {
+				break;
+			} else {
+				System.out.println("Interest Rate must be greater than 0");
+			}
+		}
+
+
+		// Time Validation
+		while (true) {
+
+			System.out.print("Enter Loan Time (Years): ");
+			obj.time = sc.nextInt();
+
+			if (obj.time > 0) {
+				break;
+			} else {
+				System.out.println("Loan Time must be greater than 0");
+			}
+		}
+
 
 		// Method Call
 		obj.calculateEMI();
