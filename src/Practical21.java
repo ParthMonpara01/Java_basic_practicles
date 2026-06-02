@@ -2,7 +2,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
+/**
+ * Writing a program of SET,MAP operation in Java
+ */
 public class Practical21 {
 
 	public static void main(String[] args) {

@@ -1,7 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
+/**
+ * Writing a program of file reading in Java
+ */
 public class Practical25 {
 
 	public static void main(String[] args) {

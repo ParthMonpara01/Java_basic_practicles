@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-
+/**
+ * Writing a program to remove duplicate in LinkedList in Java
+ */
 public class Practicle22 {
 
 	public static void main(String[] args) {

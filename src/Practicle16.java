@@ -1,6 +1,9 @@
+/**
+ * Writing a program of Polymorphism in Java
+ */
 public class Practicle16 {
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Practicle16 p16 = new Practicle16();
 		p16.Method1();
 		p16.Method1(10);

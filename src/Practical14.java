@@ -1,3 +1,6 @@
+/**
+ * Writing a program of Encapsulation in Java
+ */
 class Students{
 
 	int id;
@@ -23,7 +26,7 @@ class Students{
 }
 
 public class Practical14 {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Students s = new Students();
 		s.setId(101);
 		s.setName("Parth Monpara");

@@ -1,3 +1,6 @@
+/**
+ * Writing a program of different Inbuilt Functions in Java
+ */
 public class StringHandlingDemo {
 
 	public static void main(String[] args) {

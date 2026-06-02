@@ -1,3 +1,7 @@
+/**
+ * Writing a program of different types of Inheritance in Java
+ */
+
 // ---------------- SINGLE INHERITANCE ----------------
 class Animals {
 

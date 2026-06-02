@@ -1,3 +1,6 @@
+/**
+ * Writing a program of Exception Handling in Java
+ */
 class ExceptionDemo {
 
 	// throws keyword

@@ -1,5 +1,6 @@
 public class PolymorphismInJava {
-	public static void main(String[] args){
+
+	public static void main(String[] args) {
 		PolymorphismInJava pij = new PolymorphismInJava();
 		PolyporphismInJava2 pij2 = new PolyporphismInJava2();
 		pij2.Method1();

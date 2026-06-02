@@ -1,3 +1,6 @@
+/**
+ * Writing a program of Interface in Java
+ */
 interface SampleIntergace {
 
 	void method1();

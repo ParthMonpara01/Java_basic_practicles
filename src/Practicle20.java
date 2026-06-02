@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+/**
+ * Writing a program of ArrayList operation in Java
+ */
 public class
 Practicle20 {
 

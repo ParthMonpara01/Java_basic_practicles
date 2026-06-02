@@ -1,7 +1,9 @@
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
-
+/**
+ * Writing a program of File handling in Java
+ */
 public class Practicle23 {
 
 	public static void main(String[] args) {

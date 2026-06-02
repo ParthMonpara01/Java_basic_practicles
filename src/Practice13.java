@@ -1,3 +1,6 @@
+/**
+ * Writing a program for Abstraction in Java
+ */
 abstract class Animal {
 
 	//abstract Method
