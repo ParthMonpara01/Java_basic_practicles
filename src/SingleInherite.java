@@ -1,5 +1,6 @@
 //Single inheritance
 public class SingleInherite {
+
 	public static void main(String[] args){
 		DataInherite2 d2 = new DataInherite2();
 		d2.Method1();

@@ -2,6 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Practicle24 {
+
 	public static void main(String[] args) {
 
 		try {

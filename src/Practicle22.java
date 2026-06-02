@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Practicle22 {
+
 	public static void main(String[] args) {
 
 		// Creating list with duplicate values

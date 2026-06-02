@@ -1,4 +1,5 @@
 public class Practicle16 {
+
 	public static void main(String[] args){
 		Practicle16 p16 = new Practicle16();
 		p16.Method1();
