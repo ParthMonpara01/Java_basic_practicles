@@ -11,16 +11,14 @@ class EMICalculator {
 	// Method to calculate EMI
 	void calculateEMI() {
 
-		// Monthly interest rate
-		double monthlyRate = annualRate / (12 * 100);
-
 		// Total number of monthly installments
 		int months = time * 12;
 
-		// EMI Formula..
-		double emi = (principal * monthlyRate *
-				Math.pow(1 + monthlyRate, months))
-				/ (Math.pow(1 + monthlyRate, months) - 1);
+		double interest = principal * annualRate * time / 100;
+
+		double totalAmount = principal + interest;
+
+		double emi = totalAmount / months;
 
 		// Output..cdcdwe
 		System.out.println("Loan Amount : " + principal);
@@ -28,10 +26,11 @@ class EMICalculator {
 		System.out.println("Loan Period : " + time + " years");
 		System.out.println("Monthly EMI : " + emi);
 	}
+
 }
 
 // Main Class
-public class Practicle8 {
+public class Practical8 {
 
 	public static void main(String[] args) {
 

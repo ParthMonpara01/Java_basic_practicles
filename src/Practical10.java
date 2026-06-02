@@ -1,4 +1,4 @@
-public class Practicle10 {
+public class Practical10 {
 
 	public static void main(String[] args) {
 

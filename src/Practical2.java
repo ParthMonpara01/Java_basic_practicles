@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class Practicle2 {
+public class Practical2 {
+
 	public static void main(String[] args) {
 		//Writing a programm to use cases of If-else statement.
 		Scanner sc = new Scanner(System.in);

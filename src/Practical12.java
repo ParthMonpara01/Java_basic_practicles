@@ -20,7 +20,7 @@ public class Practicle12 {
 
 	public static void main(String[] args) {
 
-		// Accessing Static Variable
+		 // Accessing Static Variable
 		System.out.println("Static Variable: " + StaticDemo.number);
 
 		// Calling Static Method

@@ -22,14 +22,7 @@ class WrapperCompare {
 
 		// Using compareTo() method
 		int result = num1.compareTo(num2);
-
-		if (result > 0) {
-			System.out.println(num1 + " is greater than " + num2);
-		} else if (result < 0) {
-			System.out.println(num1 + " is smaller than " + num2);
-		} else {
-			System.out.println("Both numbers are same.");
-		}
+		System.out.println(result);
 
 		sc.close();
 	}

@@ -1,5 +1,5 @@
 class Parent {
-	int x = 10;
+	static int x = 10;
 
 	void show() {
 		System.out.println("Parent class method");
@@ -16,12 +16,12 @@ class Child extends Parent {
 	}
 
 	void display() {
-
+		super.x = 50;
 		// this keyword (current class variable)
 		System.out.println("Child x = " + this.x);
 
 		// super keyword (parent class variable)
-		System.out.println("Parent x = " + super.x);
+		System.out.println("Parent x = " + Parent.x);
 
 		// calling parent method
 		super.show();
@@ -34,7 +34,7 @@ class Child extends Parent {
 	public static void main(String[] args) {
 
 		Child c1 = new Child();
-		Child c2 = new Child();
+
 
 		c1.display();
 

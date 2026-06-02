@@ -1,15 +1,15 @@
-public class Practicle7 {
+public class Practical7 {
 
 	public static void main(String[] args){
-		Practicle7 p7 = new Practicle7();
+		Practical7 p7 = new Practical7(10,10);
 	}
-	//non-parameterized contructor
-	public Practicle7(){
+	// non-parameterized contructor
+	public Practical7(){
 		System.out.println("non parameterized Constructor");
 	}
 
-	//Parameterized Contructor
-	public Practicle7(int a,int b){
+	// Parameterized Contructor
+	public Practical7(int a, int b){
 		int c = a + b;
 		System.out.println("Parameterized Constuctor : " + c);
 		System.out.println("Changed parameterize ");

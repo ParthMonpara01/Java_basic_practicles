@@ -1,4 +1,4 @@
-public class Practicle1 {
+public class Practical1 {
 
 	public static void main(String[] args) {
 		//Writing a programm to print Hello World

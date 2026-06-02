@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class Practicle3 {
+public class Practical3 {
+	
 	public static void main(String[] args) {
 
-		//Wrting a programm to find current month name from the given number
+		// Writing a program to find current month name from the given number
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("Enter month number (1-12): ");
@@ -62,7 +63,6 @@ public class Practicle3 {
 			default:
 				System.out.println("Invalid month number!");
 		}
-
 		sc.close();
 	}
 
