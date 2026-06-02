@@ -1,3 +1,4 @@
+//Writing Program for Static keyword
 class StaticDemo {
 
 	// Static Variable
@@ -16,7 +17,7 @@ class StaticDemo {
 
 }
 
-public class Practicle12 {
+public class Practical12 {
 
 	public static void main(String[] args) {
 

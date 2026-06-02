@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// Class Declaration
+// Writing Program for to calculate EMI
 class EMICalculator {
 
 	// Variables (Datatypes)

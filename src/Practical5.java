@@ -1,10 +1,10 @@
+// Writing program of Star Pattern
 public class Practical5 {
 
 	public static void main(String[] args){
 		pattern1();
 	}
 
-	// Star Pattern
 	public static void pattern1() {
 		for (int i = 1; i <=6; i++){
 			int count = 1;
