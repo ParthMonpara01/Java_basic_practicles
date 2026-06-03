@@ -1,10 +1,10 @@
 /**
  * Writing a program of Polymorphism in Java
  */
-public class Practicle16 {
+public class Practical16 {
 
 	public static void main(String[] args) {
-		Practicle16 p16 = new Practicle16();
+		Practical16 p16 = new Practical16();
 		p16.Method1();
 		p16.Method1(10);
 		p16.Method1("Parth Monpara");
@@ -24,7 +24,7 @@ public class Practicle16 {
 
 }
 
-class ChildClass extends Practicle16{
+class ChildClass extends Practical16 {
 	public void Method1() {
 		System.out.println("PolymorphismInJava2 Method Called..");
 	}

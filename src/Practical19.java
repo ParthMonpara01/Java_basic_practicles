@@ -12,7 +12,7 @@ public class Practical19 {
 	//Find the Index of an Element
 	public static  int FindElement(int[] arr,int ele) {
 		int index = 0;
-		for(int i = 0;i < arr.length;i++){
+		for (int i = 0;i < arr.length;i++){
 			if (arr[i] == ele){
 				index = i;
 				break;
