@@ -5,7 +5,7 @@ import java.util.Set;
 /**
  * Writing a program to remove duplicate in LinkedList in Java
  */
-public class Practicle22 {
+public class Practical22 {
 
 	public static void main(String[] args) {
 

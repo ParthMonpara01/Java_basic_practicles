@@ -5,11 +5,11 @@ public class SingleInherite {
 		DataInherite2 d2 = new DataInherite2();
 		d2.Method1();
 	}
-	public static void Method1(){
+	public static void Method1() {
 		System.out.println("Datainherite Class Method");
 	}
 }
 
-class DataInherite2 extends SingleInherite{
+class DataInherite2 extends SingleInherite {
 
 }

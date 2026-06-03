@@ -4,8 +4,7 @@ import java.util.List;
 /**
  * Writing a program of ArrayList operation in Java
  */
-public class
-Practicle20 {
+public class Practical20 {
 
 	public static void main(String[] args) {
 

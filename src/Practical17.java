@@ -14,7 +14,7 @@ class Second implements SampleIntergace {
 	}
 }
 
-public class Practicle17 {
+public class Practical17 {
 	public static void main(String[] args) {
 
 		Second s = new Second();

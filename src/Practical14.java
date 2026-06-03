@@ -1,26 +1,26 @@
 /**
  * Writing a program of Encapsulation in Java
  */
-class Students{
+class Students {
 
 	int id;
 	String Name;
 
 	//Setter Methods
-	void setId(int id){
+	void setId(int id) {
 		this.id = id;
 	}
 
-	void setName(String name){
+	void setName(String name) {
 		this.Name = name;
 	}
 
 	//Getter Method
-	int getId(){
+	int getId() {
 		return id;
 	}
 
-	String getName(){
+	String getName() {
 		return Name;
 	}
 }

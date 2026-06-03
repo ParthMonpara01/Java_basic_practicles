@@ -3,7 +3,7 @@ import java.io.IOException;
 /**
  * Writing a program to write in created file by file handling in java
  */
-public class Practicle24 {
+public class Practical24 {
 
 	public static void main(String[] args) {
 

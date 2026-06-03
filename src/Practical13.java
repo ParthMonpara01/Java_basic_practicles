@@ -7,19 +7,19 @@ abstract class Animal {
 	abstract void sound();
 
 	//Concrete Method
-	public void eat(){
+	public void eat() {
 		System.out.println("Eate Method of class Practicle13");
 	}
 }
 
-class Dog extends Animal{
+class Dog extends Animal {
 	void sound(){
 		System.out.println("Dog Barkes");
 	}
 }
 
-public class Practice13{
-	public static void main(String[] args){
+public class Practical13 {
+	public static void main(String[] args) {
 		Dog d = new Dog();
 		d.sound();
 		d.eat();

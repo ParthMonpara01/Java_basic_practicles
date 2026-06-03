@@ -10,26 +10,26 @@ public class Practicle16 {
 		p16.Method1("Parth Monpara");
 	}
 
-	public void Method1(){
+	public void Method1() {
 		System.out.println("Method-1");
 	}
 
-	public void Method1(int num){
+	public void Method1(int num) {
 		System.out.println("My Age is : " + num);
 	}
 
-	public void Method1(String name){
+	public void Method1(String name) {
 		System.out.println("My Name is " + name);
 	}
 
 }
 
 class ChildClass extends Practicle16{
-	public void Method1(){
+	public void Method1() {
 		System.out.println("PolymorphismInJava2 Method Called..");
 	}
 
-	public void Method1(String name){
+	public void Method1(String name) {
 		System.out.println("PolymorphismInJava2 Method-1 called...");
 		System.out.println("My Name is " + name);
 	}

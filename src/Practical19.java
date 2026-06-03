@@ -1,7 +1,7 @@
 /**
  * Writing a program to find index of an Element in array
  */
-public class Practicle19 {
+public class Practical19 {
 
 	public static void main(String[] args) {
 		int arr[] = {10,20,30,40};
@@ -10,7 +10,7 @@ public class Practicle19 {
 	}
 
 	//Find the Index of an Element
-	public static  int FindElement(int[] arr,int ele){
+	public static  int FindElement(int[] arr,int ele) {
 		int index = 0;
 		for(int i = 0;i < arr.length;i++){
 			if (arr[i] == ele){
