@@ -13,8 +13,13 @@ abstract class Animal {
 }
 
 class Dog extends Animal {
-	void sound(){
+	void sound() {
 		System.out.println("Dog Barkes");
+	}
+
+	@Override
+	public void eat() {
+		System.out.println("Parth");
 	}
 }
 

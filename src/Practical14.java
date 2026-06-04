@@ -3,8 +3,8 @@
  */
 class Students {
 
-	int id;
-	String Name;
+	private int id;
+	private String Name;
 
 	//Setter Methods
 	void setId(int id) {
@@ -26,6 +26,7 @@ class Students {
 }
 
 public class Practical14 {
+
 	public static void main(String[] args) {
 		Students s = new Students();
 		s.setId(101);

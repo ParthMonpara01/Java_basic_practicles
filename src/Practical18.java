@@ -15,7 +15,7 @@ class ExceptionDemo {
 	}
 }
 
-public class Practicle18 {
+public class Practical18 {
 
 	public static void main(String[] args) {
 
