@@ -34,7 +34,7 @@ public class Practical22 {
 
 	//Java will iterate internally after writing code like "System.out.println(list);"
 	//System.out.println(list.toString());
-	//after that java will create String like [A, B, C, D] and we'll get output by wrinting System.out.println(list);
+	//after that java will create String like [A, B, C, D] and we'll get output by writing System.out.println(list);
 
 	//We used LinkedHashSet to remove the duplicates
 	//Set will no store duplicates

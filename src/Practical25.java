@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 /**
- * Writing a program of file reading in Java
+ * Writing a program of file reading and String Handling in Java
  */
 public class Practical25 {
 
@@ -27,11 +27,9 @@ public class Practical25 {
 				System.out.println(data);
 
 				// Example string operations
-				System.out.println("Uppercase: "
-						+ data.toUpperCase());
+				System.out.println("Uppercase: " + data.toUpperCase());
 
-				System.out.println("Length: "
-						+ data.length());
+				System.out.println("Length: " + data.length());
 
 				System.out.println();
 			}
@@ -39,11 +37,28 @@ public class Practical25 {
 			sc.close();
 
 		} catch (FileNotFoundException e) {
-
 			// Exception Handling
-			System.out.println("File not found: "
-					+ e.getMessage());
+			System.out.println("File not found: " + e.getMessage());
 		}
+
+		String str = "Hello Java";
+
+		System.out.println("Original String: " + str);
+
+		// Length
+		System.out.println("Length: " + str.length());
+
+		// Uppercase
+		System.out.println("Uppercase: " + str.toUpperCase());
+
+		// Lowercase
+		System.out.println("Lowercase: " + str.toLowerCase());
+
+		// Replace
+		System.out.println("Replace: " + str.replace("Java", "World"));
+
+		// Contains
+		System.out.println("Contains Java: " + str.contains("Java"));
 	}
 
 }
