@@ -1,0 +1,388 @@
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50)
+);
+ 
+-- Table: Department
+CREATE TABLE Department (
+    DepartmentID INT PRIMARY KEY,
+    EmployeeID INT,
+    DepartmentName VARCHAR(50),
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
+);
+ 
+-- Table: Salary
+CREATE TABLE Salary (
+    SalaryID INT PRIMARY KEY,
+    EmployeeID INT,
+    Amount DECIMAL(10,2),
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
+);
+
+
+INSERT INTO Employees (EmployeeID, FirstName, LastName) VALUES
+(101, 'Alice', 'Smith'),
+(102, 'Bob', 'Johnson'),
+(103, 'Charlie', 'Brown'),
+(104, 'Diana', 'White'),
+(105, 'Ethan', 'Davis');
+ 
+-- Insert into Department (assigning one employee per department)
+INSERT INTO Department (DepartmentID, EmployeeID, DepartmentName) VALUES
+(101, 101, 'HR'),
+(102, 102, 'Finance'),
+(3, 103, 'IT'),
+(4, 104, 'Marketing'),
+(5, 105, 'Sales');
+ 
+-- Insert into Salary
+INSERT INTO Salary (SalaryID, EmployeeID, Amount) VALUES
+(101, 101, 50000.00),
+(102, 102, 60000.00),
+(3, 103, 55000.00),
+(4, 104, 65000.00),
+(5, 105, 70000.00);
+
+select EmployeeID, FirstName
+from employees e
+union 
+select DepartmentID, DepartmentName
+from Department;
+
+
+select * from
+employees e 
+right  join Department d 
+on e.EmployeeID = d.DepartmentID  
+left join Salary s
+on s.SalaryID  = e.EmployeeID;
+
+
+SELECT
+  *
+FROM Employees e
+JOIN Department d
+    ON e.EmployeeID = d.EmployeeID
+JOIN Salary s
+    ON e.EmployeeID = s.EmployeeID;
+
+
+select DISTINCT AMOUNT from SALARY order by amount desc LIMIT 1 OFFSET 1;
+
+select * from SALARY
+where AMOUNT = (
+	select MAX(AMOUNT)
+	from SALARY
+);
+
+
+
+select * from SALARY;
+
+
+select * from
+employees e 
+left join department d 
+on e.EmployeeID = d.EmployeeID  
+
+where e.EmployeeID  = 101;
+
+select * from Employees;
+select FirstName from Employees e;
+
+select * from employees e 
+join Salary s
+on e.EmployeeId = s.SalaryID 
+where Amount > 50000;
+
+select * from Salary;
+
+select DepartmentName
+from department d;
+
+select Amount from salary s;
+
+select * from employees e 
+where e.EmployeeID = 101;
+
+select * from Employees e
+where FirstName like "%Alice%";
+
+select * from Employees e
+where FirstName like "%Smith%";
+
+select * from Employees e 
+join Department d
+on e.EmployeeId = d.DepartmentID 
+where DepartmentName = "HR";
+
+select * from Salary;
+
+select * from Employees e
+join Salary s
+on e.EmployeeId = s.SalaryID 
+where Amount > 50000;
+
+select * from Employees e
+join Salary s
+on e.EmployeeId = s.SalaryID 
+where Amount < 65000;
+
+select * from Employees e
+join Salary s
+on e.EmployeeId = s.SalaryID 
+where Amount between 50000 and 70000;
+
+select * from employees e
+order by FirstName asc;
+
+select * from employees e
+order by FirstName desc;
+
+select Max(Amount)as Max_Salary
+from salary s;
+
+select COUNT(*)
+from Employees e;
+
+select count(DepartmentName)
+from Department;
+
+select * from department;
+
+select DepartmentName,COUNT(*) as Total_Emp
+from Employees e
+join Department d
+on e.EmployeeId = d.DepartmentID
+group by DepartmentName;
+
+select * from employees e 
+where Firstname like "%i%";
+
+select * from Employees e
+join Salary s
+on e.EmployeeId = s.SalaryId
+where Amount = 60000;
+
+select * from employees e
+join Salary s
+on e.EmployeeId = s.SalaryID
+where Amount = (
+	select Max(Amount)
+	from Salary
+)
+limit 1;
+
+select * from employees e
+join Salary s
+on e.EmployeeId = s.SalaryId
+where s.Amount =(
+	select MAX(Amount)
+	from Salary
+)
+limit 1 offset 1;
+
+select * from employees e 
+join Salary s
+on e.EmployeeId = s.SalaryID
+where Amount = (
+	select max(Amount)
+	from Salary
+);
+
+select * from Employees e
+join Salary s
+on e.EmployeeId = s.SalaryID
+where Amount = (
+	select max(Amount)
+	from Salary
+)
+order by Amount asc;
+
+select * from Employees e
+join Department d
+on e.EmployeeId = d.DepartmentID
+join Salary s
+on e.EmployeeId = s.SalaryID
+where e.EmployeeID = 101;
+
+select * from Employees e
+join Salary s
+on e.EmployeeId = s.SalaryID
+where Amount > (
+	select avg(Amount)
+	from Salary
+);
+
+select avg(Amount) as Avg_Salary
+from salary s;
+
+select * from Salary;
+
+select * from Employees e
+join Salary s
+on e.EmployeeId = s.SalaryID
+where Amount < (
+	select avg(Amount)
+	from Salary
+);
+
+select DepartmentName,max(Amount)as Max_Salary
+from Department d
+join salary s
+on d.DepartmentID  = s.SalaryID
+group by DepartmentName;
+
+select DepartmentName,count(DepartmentId)
+from Department d
+group by DepartmentName;
+
+select DepartmentName,SUM(Amount)as Total_Amount
+from Department d
+join Salary s
+on d.DepartmentId = s.SalaryID
+group by d.DepartmentName;
+
+select FirstName,count(*) as total_count
+from Employees e
+group by FirstName
+having COUNT(*) = 1;
+
+select * from Employees e
+join Department d
+on e.EmployeeId = d.DepartmentID
+order by d.DepartmentName desc;
+
+select FirstName,Amount
+from Employees e
+join Salary s
+on e.EmployeeID = s.EmployeeID
+order by e.FirstName asc, s.Amount;
+
+select * from Employees e
+where FirstName like "%Ali%";
+
+select FirstName,LENGTH(FirstName) as name_length
+from Employees e;
+
+select * from Employees e
+union all 
+select * from Department d;
+
+select DepartmentName,count(DepartmentId)as total_emp
+from Department d
+group by DepartmentName;
+
+select DepartmentName,count(DepartmentId)as total_emp
+from department d 
+group by DepartmentName;
+
+select e.FirstName,s.Amount 
+from Employees e 
+inner join Salary s
+on e.EmployeeId = s.EmployeeID
+where s.Amount > (
+	select s2.Amount 
+	from Employees e2
+	inner join Salary s2
+	on e2.EmployeeID = s2.EmployeeID
+	where e2.FirstName = "Alice"
+);
+
+SELECT e.FirstName, s.Amount
+FROM Employees e
+INNER JOIN Salary s
+ON e.EmployeeID = s.EmployeeID
+WHERE s.Amount > (
+    SELECT s2.Amount
+    FROM Employees e2
+    INNER JOIN Salary s2
+    ON e2.EmployeeID = s2.EmployeeID
+    WHERE e2.FirstName = 'Alice'
+);
+
+select * from Employees e
+join Salary s
+on e.EmployeeID = s.SalaryID
+where  s.Amount < (
+	select s2.Amount
+	from Employees e2
+	join Salary s2
+	on e2.EmployeeID = s2.EmployeeID
+	where e2.FirstName = "Bob"
+);
+
+select FirstName,Max(Amount)as Max_Salary
+from Employees e
+join Salary s
+on e.EmployeeID = s.SalaryID
+group by FirstName
+limit 1 offset 1;
+
+
+create table Sample(
+	id int primary key auto_increment,
+	Name Varchar(50),
+	Email varchar(50),
+	location varchar(50) default "Ahmedabad"
+);
+
+select * from Sample;
+
+insert into Sample(id,Name,Email,location)values
+(
+	101,"John Doe","johndow@gmail.com","Ahmedabad"
+);
+
+select * from Sample;
+
+update Sample
+set Email = "johndoe@gmail.com"
+where id = 101;
+
+select * from Salary;
+
+UPDATE salary
+SET Amount = (
+    SELECT avg_amount
+    FROM (
+        SELECT AVG(Amount) AS avg_amount
+        FROM salary
+    ) AS temp
+)
+WHERE SalaryId = 102;
+
+select * from Salary;
+
+update salary
+set Amount = 66800
+where SalaryID = 102;
+
+select * from employees e 
+join Salary s
+on e.EmployeeID = s.SalaryID
+where amount > (
+	select avg(Amount)
+	from Salary
+);
+
+update Salary s
+join Department d
+on d.DepartmentId = s.SalaryID 
+set Amount = 150000
+where d.DepartmentName = "IT";
+
+select * from Sample;
+
+alter table Sample
+add(
+	department varchar(50),
+	joining_date Date
+	);
+
+update Sample
+set department = "IT",
+joining_date = '2026-06-08'
+where id = 101;
+
