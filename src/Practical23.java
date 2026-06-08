@@ -11,9 +11,9 @@ public class Practical23 {
 		try {
 
 			// Writing data into file
-			FileWriter fw = new FileWriter("demo.txt");
+			FileWriter fw = new FileWriter("demo1.txt");
 
-			fw.write("Hello Java");
+			fw.write("Hello Java1");
 
 			fw.close();
 

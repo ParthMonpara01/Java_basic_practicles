@@ -26,12 +26,13 @@ public class Practical21 {
 		// ---------------- MAP CONCEPT ----------------
 		System.out.println("\n----- Map Example -----");
 
-		Map<Integer, String> studentMap = new HashMap<>();
+		HashMap<Integer, String> studentMap = new HashMap<>();
 
 		// Adding key-value pairs
 		studentMap.put(101, "Parth");
 		studentMap.put(102, "Rahul");
-		studentMap.put(103, "Amit");
+		studentMap.put(103, "Prince");
+		studentMap.put(null, null);
 
 		// Printing Map
 		System.out.println("Student Map: " + studentMap);

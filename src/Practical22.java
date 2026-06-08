@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+
 /**
  * Writing a program to remove duplicate in LinkedList in Java
  */
@@ -26,7 +24,7 @@ public class Practical22 {
 		System.out.println(list);
 
 		// Removing duplicates using LinkedHashSet
-		Set<String> set = new LinkedHashSet<>(list);
+		Set<String> set = new HashSet<>(list);
 
 		System.out.println("List after removing duplicates:");
 		System.out.println(set);
