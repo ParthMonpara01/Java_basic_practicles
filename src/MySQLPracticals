@@ -1,388 +1,154 @@
-CREATE TABLE Employees (
-    EmployeeID INT PRIMARY KEY,
-    FirstName VARCHAR(50),
-    LastName VARCHAR(50)
-);
- 
--- Table: Department
-CREATE TABLE Department (
-    DepartmentID INT PRIMARY KEY,
-    EmployeeID INT,
-    DepartmentName VARCHAR(50),
-    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
-);
- 
--- Table: Salary
-CREATE TABLE Salary (
-    SalaryID INT PRIMARY KEY,
-    EmployeeID INT,
-    Amount DECIMAL(10,2),
-    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
+CREATE TABLE hobby (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100)
 );
 
+CREATE TABLE employee (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INT,
+    mobile_number VARCHAR(15),
+    address VARCHAR(255)
+);
 
-INSERT INTO Employees (EmployeeID, FirstName, LastName) VALUES
-(101, 'Alice', 'Smith'),
-(102, 'Bob', 'Johnson'),
-(103, 'Charlie', 'Brown'),
-(104, 'Diana', 'White'),
-(105, 'Ethan', 'Davis');
- 
--- Insert into Department (assigning one employee per department)
-INSERT INTO Department (DepartmentID, EmployeeID, DepartmentName) VALUES
-(101, 101, 'HR'),
-(102, 102, 'Finance'),
-(3, 103, 'IT'),
-(4, 104, 'Marketing'),
-(5, 105, 'Sales');
- 
--- Insert into Salary
-INSERT INTO Salary (SalaryID, EmployeeID, Amount) VALUES
-(101, 101, 50000.00),
-(102, 102, 60000.00),
-(3, 103, 55000.00),
-(4, 104, 65000.00),
-(5, 105, 70000.00);
+CREATE TABLE employee_salary (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT,
+    salary DECIMAL(10,2),
+    salary_date DATE,
+    
+    FOREIGN KEY (employee_id)
+    REFERENCES employee(id)
+);
 
-select EmployeeID, FirstName
-from employees e
-union 
-select DepartmentID, DepartmentName
-from Department;
+CREATE TABLE employee_salary (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT,
+    salary DECIMAL(10,2),
+    salary_date DATE,
+    
+    FOREIGN KEY (employee_id)
+    REFERENCES employee(id)
+);
 
+INSERT INTO employee (first_name, last_name, age, mobile_number, address)
+VALUES
+('Michael', 'Smith', 28, '9876543210', 'New York'),
+('Charlie', 'Brown', 32, '9876543211', 'California'),
+('Alice', 'Johnson', 25, '9876543212', 'Texas'),
+('Bob', 'Wilson', 30, '9876543213', 'Florida');
 
-select * from
-employees e 
-right  join Department d 
-on e.EmployeeID = d.DepartmentID  
-left join Salary s
-on s.SalaryID  = e.EmployeeID;
+INSERT INTO employee_salary (employee_id, salary, salary_date)
+VALUES
+(1, 50000.00, '2025-01-01'),
+(2, 60000.00, '2025-01-01'),
+(3, 55000.00, '2025-01-01'),
+(4, 70000.00, '2025-01-01'),
+(1, 52000.00, '2025-06-01'),
+(2, 62000.00, '2025-06-01');
 
+INSERT INTO hobby (name)
+VALUES
+('Cricket'),
+('Reading'),
+('Swimming'),
+('Gaming'),
+('Music');
+
+INSERT INTO employee_hobby (employee_id, hobby_id)
+VALUES
+(1, 1), -- Michael -> Cricket
+(1, 2), -- Michael -> Reading
+
+(2, 3), -- Charlie -> Swimming
+(2, 5), -- Charlie -> Music
+
+(3, 2), -- Alice -> Reading
+(3, 4), -- Alice -> Gaming
+
+(4, 1), -- Bob -> Cricket
+(4, 5); -- Bob -> Music
+
+select * from hobby;
+
+select * from employee;
+
+select * from employee_salary;
+
+select * from employee_hobby;
+
+update hobby
+set name = "Singing"
+where name in ("Singing","Gaming");
+
+update employee 
+set first_name = "Jone"
+where first_name = "Alice";
+
+update employee_salary
+set salary = 80000
+where salary = 50000;
+
+update employee_hobby
+set hobby_id = 3
+where hobby_id = 1;
+
+delete from hobby
+where name in ("Swimming","Gaming");
+
+delete from employee
+where first_name in ("Alice","Michael");
+
+delete from employee_salary
+where employee_id in (101,102);
+
+delete from employee_hobby
+where employee_id in (1,2);
+
+Truncate table hobby;
+
+Truncate table employee;
+
+Truncate table employee_salary;
+
+Truncate table employee_hobby;
+
+select * from hobby;
+
+select * from employee;
+
+select * from employee_salary;
+
+select * from employee_hobby;
+
+select *
+from employee e
+join hobby h
+on e.first_name = h.name
+where first_name = "Charlie";
+
+select first_name, salary
+from Employee e
+join employee_salary s
+on e.id = s.employee_id;
 
 SELECT
-  *
-FROM Employees e
-JOIN Department d
-    ON e.EmployeeID = d.EmployeeID
-JOIN Salary s
-    ON e.EmployeeID = s.EmployeeID;
-
-
-select DISTINCT AMOUNT from SALARY order by amount desc LIMIT 1 OFFSET 1;
-
-select * from SALARY
-where AMOUNT = (
-	select MAX(AMOUNT)
-	from SALARY
-);
-
-
-
-select * from SALARY;
-
-
-select * from
-employees e 
-left join department d 
-on e.EmployeeID = d.EmployeeID  
-
-where e.EmployeeID  = 101;
-
-select * from Employees;
-select FirstName from Employees e;
-
-select * from employees e 
-join Salary s
-on e.EmployeeId = s.SalaryID 
-where Amount > 50000;
-
-select * from Salary;
-
-select DepartmentName
-from department d;
-
-select Amount from salary s;
-
-select * from employees e 
-where e.EmployeeID = 101;
-
-select * from Employees e
-where FirstName like "%Alice%";
-
-select * from Employees e
-where FirstName like "%Smith%";
-
-select * from Employees e 
-join Department d
-on e.EmployeeId = d.DepartmentID 
-where DepartmentName = "HR";
-
-select * from Salary;
-
-select * from Employees e
-join Salary s
-on e.EmployeeId = s.SalaryID 
-where Amount > 50000;
-
-select * from Employees e
-join Salary s
-on e.EmployeeId = s.SalaryID 
-where Amount < 65000;
-
-select * from Employees e
-join Salary s
-on e.EmployeeId = s.SalaryID 
-where Amount between 50000 and 70000;
-
-select * from employees e
-order by FirstName asc;
-
-select * from employees e
-order by FirstName desc;
-
-select Max(Amount)as Max_Salary
-from salary s;
-
-select COUNT(*)
-from Employees e;
-
-select count(DepartmentName)
-from Department;
-
-select * from department;
-
-select DepartmentName,COUNT(*) as Total_Emp
-from Employees e
-join Department d
-on e.EmployeeId = d.DepartmentID
-group by DepartmentName;
-
-select * from employees e 
-where Firstname like "%i%";
-
-select * from Employees e
-join Salary s
-on e.EmployeeId = s.SalaryId
-where Amount = 60000;
-
-select * from employees e
-join Salary s
-on e.EmployeeId = s.SalaryID
-where Amount = (
-	select Max(Amount)
-	from Salary
-)
-limit 1;
-
-select * from employees e
-join Salary s
-on e.EmployeeId = s.SalaryId
-where s.Amount =(
-	select MAX(Amount)
-	from Salary
-)
-limit 1 offset 1;
-
-select * from employees e 
-join Salary s
-on e.EmployeeId = s.SalaryID
-where Amount = (
-	select max(Amount)
-	from Salary
-);
-
-select * from Employees e
-join Salary s
-on e.EmployeeId = s.SalaryID
-where Amount = (
-	select max(Amount)
-	from Salary
-)
-order by Amount asc;
-
-select * from Employees e
-join Department d
-on e.EmployeeId = d.DepartmentID
-join Salary s
-on e.EmployeeId = s.SalaryID
-where e.EmployeeID = 101;
-
-select * from Employees e
-join Salary s
-on e.EmployeeId = s.SalaryID
-where Amount > (
-	select avg(Amount)
-	from Salary
-);
-
-select avg(Amount) as Avg_Salary
-from salary s;
-
-select * from Salary;
-
-select * from Employees e
-join Salary s
-on e.EmployeeId = s.SalaryID
-where Amount < (
-	select avg(Amount)
-	from Salary
-);
-
-select DepartmentName,max(Amount)as Max_Salary
-from Department d
-join salary s
-on d.DepartmentID  = s.SalaryID
-group by DepartmentName;
-
-select DepartmentName,count(DepartmentId)
-from Department d
-group by DepartmentName;
-
-select DepartmentName,SUM(Amount)as Total_Amount
-from Department d
-join Salary s
-on d.DepartmentId = s.SalaryID
-group by d.DepartmentName;
-
-select FirstName,count(*) as total_count
-from Employees e
-group by FirstName
-having COUNT(*) = 1;
-
-select * from Employees e
-join Department d
-on e.EmployeeId = d.DepartmentID
-order by d.DepartmentName desc;
-
-select FirstName,Amount
-from Employees e
-join Salary s
-on e.EmployeeID = s.EmployeeID
-order by e.FirstName asc, s.Amount;
-
-select * from Employees e
-where FirstName like "%Ali%";
-
-select FirstName,LENGTH(FirstName) as name_length
-from Employees e;
-
-select * from Employees e
-union all 
-select * from Department d;
-
-select DepartmentName,count(DepartmentId)as total_emp
-from Department d
-group by DepartmentName;
-
-select DepartmentName,count(DepartmentId)as total_emp
-from department d 
-group by DepartmentName;
-
-select e.FirstName,s.Amount 
-from Employees e 
-inner join Salary s
-on e.EmployeeId = s.EmployeeID
-where s.Amount > (
-	select s2.Amount 
-	from Employees e2
-	inner join Salary s2
-	on e2.EmployeeID = s2.EmployeeID
-	where e2.FirstName = "Alice"
-);
-
-SELECT e.FirstName, s.Amount
-FROM Employees e
-INNER JOIN Salary s
-ON e.EmployeeID = s.EmployeeID
-WHERE s.Amount > (
-    SELECT s2.Amount
-    FROM Employees e2
-    INNER JOIN Salary s2
-    ON e2.EmployeeID = s2.EmployeeID
-    WHERE e2.FirstName = 'Alice'
-);
-
-select * from Employees e
-join Salary s
-on e.EmployeeID = s.SalaryID
-where  s.Amount < (
-	select s2.Amount
-	from Employees e2
-	join Salary s2
-	on e2.EmployeeID = s2.EmployeeID
-	where e2.FirstName = "Bob"
-);
-
-select FirstName,Max(Amount)as Max_Salary
-from Employees e
-join Salary s
-on e.EmployeeID = s.SalaryID
-group by FirstName
-limit 1 offset 1;
-
-
-create table Sample(
-	id int primary key auto_increment,
-	Name Varchar(50),
-	Email varchar(50),
-	location varchar(50) default "Ahmedabad"
-);
-
-select * from Sample;
-
-insert into Sample(id,Name,Email,location)values
-(
-	101,"John Doe","johndow@gmail.com","Ahmedabad"
-);
-
-select * from Sample;
-
-update Sample
-set Email = "johndoe@gmail.com"
-where id = 101;
-
-select * from Salary;
-
-UPDATE salary
-SET Amount = (
-    SELECT avg_amount
-    FROM (
-        SELECT AVG(Amount) AS avg_amount
-        FROM salary
-    ) AS temp
-)
-WHERE SalaryId = 102;
-
-select * from Salary;
-
-update salary
-set Amount = 66800
-where SalaryID = 102;
-
-select * from employees e 
-join Salary s
-on e.EmployeeID = s.SalaryID
-where amount > (
-	select avg(Amount)
-	from Salary
-);
-
-update Salary s
-join Department d
-on d.DepartmentId = s.SalaryID 
-set Amount = 150000
-where d.DepartmentName = "IT";
-
-select * from Sample;
-
-alter table Sample
-add(
-	department varchar(50),
-	joining_date Date
-	);
-
-update Sample
-set department = "IT",
-joining_date = '2026-06-08'
-where id = 101;
+    CONCAT(e.first_name, ' ', e.last_name) AS employee_name,
+
+    (
+        SELECT SUM(es.salary)
+        FROM employee_salary es
+        WHERE es.employee_id = e.id
+    ) AS total_salary,
+
+    (
+        SELECT GROUP_CONCAT(h.name SEPARATOR ', ')
+        FROM employee_hobby eh
+        INNER JOIN hobby h
+            ON eh.hobby_id = h.id
+        WHERE eh.employee_id = e.id
+    ) AS hobbies
+
+FROM employee e;
 
