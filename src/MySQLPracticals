@@ -1,8 +1,10 @@
+-- Create hobby table
 CREATE TABLE hobby (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100)
 );
 
+-- Create employee table
 CREATE TABLE employee (
     id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50),
@@ -12,6 +14,7 @@ CREATE TABLE employee (
     address VARCHAR(255)
 );
 
+-- Create employee_salary table
 CREATE TABLE employee_salary (
     id INT PRIMARY KEY AUTO_INCREMENT,
     employee_id INT,
@@ -22,6 +25,7 @@ CREATE TABLE employee_salary (
     REFERENCES employee(id)
 );
 
+-- Create employee_salary table
 CREATE TABLE employee_salary (
     id INT PRIMARY KEY AUTO_INCREMENT,
     employee_id INT,
@@ -32,6 +36,7 @@ CREATE TABLE employee_salary (
     REFERENCES employee(id)
 );
 
+-- Inserting multiple data into employee table
 INSERT INTO employee (first_name, last_name, age, mobile_number, address)
 VALUES
 ('Michael', 'Smith', 28, '9876543210', 'New York'),
@@ -39,6 +44,7 @@ VALUES
 ('Alice', 'Johnson', 25, '9876543212', 'Texas'),
 ('Bob', 'Wilson', 30, '9876543213', 'Florida');
 
+-- Inserting multiple data into employee_salary table
 INSERT INTO employee_salary (employee_id, salary, salary_date)
 VALUES
 (1, 50000.00, '2025-01-01'),
@@ -48,6 +54,7 @@ VALUES
 (1, 52000.00, '2025-06-01'),
 (2, 62000.00, '2025-06-01');
 
+-- Inserting multiple data into hobby table
 INSERT INTO hobby (name)
 VALUES
 ('Cricket'),
@@ -56,6 +63,7 @@ VALUES
 ('Gaming'),
 ('Music');
 
+-- Inserting multiple data into employee_hobby table
 INSERT INTO employee_hobby (employee_id, hobby_id)
 VALUES
 (1, 1), -- Michael -> Cricket
@@ -70,69 +78,84 @@ VALUES
 (4, 1), -- Bob -> Cricket
 (4, 5); -- Bob -> Music
 
+-- Selecting all data from hobby
 select * from hobby;
 
+-- Selecting all data from employee
 select * from employee;
 
+-- Selecting all data from employee_salary
 select * from employee_salary;
 
+-- Selecting all data from employee_hobby
 select * from employee_hobby;
 
+-- update hobby table
 update hobby
 set name = "Singing"
 where name in ("Singing","Gaming");
 
+-- update employee table
 update employee 
 set first_name = "Jone"
 where first_name = "Alice";
 
+-- update employee_salary table
 update employee_salary
 set salary = 80000
 where salary = 50000;
 
+-- update employee_hobby table
 update employee_hobby
 set hobby_id = 3
 where hobby_id = 1;
 
+-- delete two data from hobby table
 delete from hobby
 where name in ("Swimming","Gaming");
 
+-- delete two data from employee table
 delete from employee
 where first_name in ("Alice","Michael");
 
+-- delete two data from employee_salary table
 delete from employee_salary
 where employee_id in (101,102);
 
+-- delete two data from employee_hobby table
 delete from employee_hobby
 where employee_id in (1,2);
 
+-- delete data from hobby table
 Truncate table hobby;
 
+-- delete data from employee table
 Truncate table employee;
 
+-- delete data from employee_salary table
 Truncate table employee_salary;
 
+-- delete data from employee_hobby table
 Truncate table employee_hobby;
 
-select * from hobby;
+-- Create a select single query to get all employee name, all hobby_name
+SELECT
+    CONCAT(e.first_name, ' ', e.last_name) AS employee_name,
+    GROUP_CONCAT(h.name SEPARATOR ', ') AS hobbies
+FROM employee e
+INNER JOIN employee_hobby eh
+    ON e.id = eh.employee_id
+INNER JOIN hobby h
+    ON eh.hobby_id = h.id
+GROUP BY e.id, e.first_name, e.last_name;
 
-select * from employee;
-
-select * from employee_salary;
-
-select * from employee_hobby;
-
-select *
-from employee e
-join hobby h
-on e.first_name = h.name
-where first_name = "Charlie";
-
+-- Create a select query to get  employee name, his/her employee_salary
 select first_name, salary
 from Employee e
 join employee_salary s
 on e.id = s.employee_id;
 
+-- Create a select query to get employee name, total salary of employee, hobby name(comma-separated - you need to use subquery for hobby name).
 SELECT
     CONCAT(e.first_name, ' ', e.last_name) AS employee_name,
 
@@ -151,4 +174,3 @@ SELECT
     ) AS hobbies
 
 FROM employee e;
-
